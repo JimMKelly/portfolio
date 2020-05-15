@@ -16,10 +16,10 @@ body {
   width: 100%;
   margin: 0;
   background-size: cover;
-  background-attachment: scroll;
   background-image: url('images/space1.jpg');
   background-repeat: no-repeat;
-  /*object-fit: cover;
+  overflow-x: scroll;
+    /*object-fit: cover;
   background-attachment: scroll;
   background-attachment: fixed;*/
 }
