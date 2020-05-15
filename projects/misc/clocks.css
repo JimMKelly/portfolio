@@ -1,0 +1,22 @@
+.fieldsetClass {
+  margin: auto;
+  display: inline-flex;
+  height: auto;
+  background-color: rgba(87, 112, 112,0.2);
+}
+
+.svgClass {
+    stroke-width: 2;
+}
+
+.textClass {
+  stroke-width: 1.5;
+  stroke: rgb(211, 211, 202);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.textName {
+  stroke-width: 1.5;
+  stroke: rgb(211, 211, 202);
+  font-family: Arial, Helvetica, sans-serif;
+}

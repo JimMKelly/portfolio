@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tic Tac Toe</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../styles.css">
+		<script src="tictactoe.js"></script>
+	</head>
+
+	<body onload="updateBoard()">
+		<section class="gamesbtns">
+            <div>
+				<button id="homebtn" class="btn" onclick="window.location.href = '../../index.html'">Home</button>
+				<button class="btn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = '../projects.html'">Projects</button>
+			</div>
+            <div>
+				<button class="btn" onclick="window.location.href = '../misc/clocks.html'">Clocks</button>
+                <button class="btn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = 'tictactoe.html'">Tic Tac Toe</button>
+                <button class="btn" onclick="window.location.href = 'connect4.html'">Connect Four</button>
+                <button class="btn" onclick="window.location.href = 'reversi.html'">Reversi</button>
+            </div>
+        </section>   
+		<div id="outerdiv">
+			<fieldset id="scores">
+				<p id="p1Score" class="scoreboard"></p> 
+				<p id="p2Score" class="scoreboard"></p>
+				<button onclick="resetScores()" class="btn2" id="resetBtn" >Reset scores</button>
+			</fieldset>
+			<div id="overText">Player 1, click to start.</div>
+		</div>
+		<div>
+			<button onclick="replay()" class="btn2" id="startBtn" style="display: none"></button>
+			<canvas id="myCanvas" width="400" height="400" >blah</canvas>
+		</div>
+		
+	</body>
+</html>
