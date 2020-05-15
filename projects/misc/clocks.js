@@ -1,24 +1,28 @@
 var numClocks = 0;
 var citiesUsed = [];
 var currentCity = "";
+var d = new Date();
+var n = d.getTimezoneOffset();
+var b = d.getUTCHours();
+//console.log(n, b);
+
 var allCities = [
   { name: "Madrid"  ,
-    timeDiff: 0     },
+    timeDiff: 2     },
   { name: "Auckland",
-    timeDiff: 10    },
+    timeDiff: 12    },
   { name: "London"  ,
-    timeDiff: -1    },
+    timeDiff: 1    },
   { name: "Sydney"  ,
-    timeDiff: 8     },
+    timeDiff: 10     },
   { name: "New York",
-    timeDiff: -6    },
+    timeDiff: -4    },
   { name: "Tokyo"   ,
-    timeDiff: 7     },
+    timeDiff: 9     },
   { name: "Moscow"  ,
-    timeDiff: 1     },
+    timeDiff: 3     },
   { name: "Beijing"  ,
-    timeDiff: 6     }
-
+    timeDiff: 8     }
 ]
 
 function resetAll() {
@@ -167,8 +171,9 @@ function createClock(_name, _diff, _arc, _hands, _24hr) {
   fieldSet1.appendChild(svg1);
 
   //Set time variables
-  var d = new Date();
-  var hr = (d.getHours() + timeDiff) % 24;
+  d = new Date();
+  b = d.getUTCHours();
+  var hr = (b + timeDiff) % 24;
   var mins = d.getMinutes();
   var secs = d.getSeconds();
   var hr2 = hr;
