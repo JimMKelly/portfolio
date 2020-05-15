@@ -226,15 +226,16 @@ function drawBoard() {
 				ctx.lineTo(xPos - p,yPos + p);
 				ctx.lineTo(xPos - p,yPos - p);
 				ctx.closePath();
-				//ctx.fillStyle = "rgb(150, 144, 60)";
-				ctx.fillStyle = "pink";
+				ctx.fillStyle = "rgba(54, 125, 217, 0.5)";
+				//ctx.fillStyle = "pink";
 				ctx.fill();
 				ctx.stroke();
 			}
 			
 			if(board[i][j] == p1Char || (winner == 1 && board[i][j] == winChar)) {
 				//Draw O
-				ctx.fillStyle = "rgb(54, 125, 217)";
+				//ctx.fillStyle = "rgb(54, 125, 217)";
+				ctx.fillStyle = "rgb(27, 143, 33)";
 				ctx.beginPath();
 				ctx.arc(xPos, yPos, 50, 0, 2*Math.PI);
 				ctx.closePath();

@@ -92,7 +92,7 @@ body {
 .contdiv {
   margin-top: 10%;
   width: 100%;
-  height: 300px;
+  height: 600px;
   background-color: rgba(87, 112, 112,0.2);
 }
 
@@ -119,21 +119,21 @@ body {
   color: beige;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -10%);
+  transform: translate(-50%);
+  /*transform: translate(-50%, -10%);*/
   font-size: 50px;
+  margin-bottom: 1em;
 }
 
 .centered2 {
-  position: absolute;
+  position: relative;
   color: beige;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -10%);
+  top: 60%;
+  transform: translate(-50%);
   font-size: 30px;
 }
 
 /*############ GAMES #############*/
-
 #overText {
   font-size: 30px;
   padding: 0;
@@ -141,6 +141,7 @@ body {
   margin: auto;
   text-align: justify;
   color: rgb(179, 167, 171);
+  transform: translate(-50%);
 }
 
 .scoreboard {

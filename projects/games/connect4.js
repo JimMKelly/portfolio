@@ -161,12 +161,13 @@ function drawBoard() {
 			ctx.moveTo(xPos + 45,yPos);
 			ctx.arc(xPos, yPos, 45, 2*Math.PI, 0,true);
 			ctx.closePath();
-			ctx.fillStyle = "grey";
+			//ctx.fillStyle = "grey";
+			ctx.fillStyle = "rgb(54, 125, 217)";
 			ctx.fill();
 			ctx.stroke();
 
 			if(board[i][j] == p1Char || (winner == 1 && board[i][j] == winChar)) {
-				ctx.fillStyle = "rgb(54, 125, 217)";
+				ctx.fillStyle = "rgb(27, 143, 33)";
 				ctx.beginPath();
 				ctx.arc(xPos, yPos, 44, 0, 2*Math.PI);
 				ctx.fill();
