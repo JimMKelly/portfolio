@@ -10,31 +10,31 @@
 	<body onload="updateBoard()">
 		<section class="gamesbtns">
 			<div>
-				<button id="homebtn" class="btn" onclick="window.location.href = '../../index.html'">Home</button>
-				<button class="btn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = '../projects.html'">Projects</button>
+				<button id="homebtn" class="navBtn" onclick="window.location.href = '../../index.html'">Home</button>
+				<button class="navBtn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = '../projects.html'">Projects</button>
 			</div>
             <div>
-				<button class="btn" onclick="window.location.href = '../misc/clocks.html'">Clocks</button>
-                <button class="btn" onclick="window.location.href = 'tictactoe.html'">Tic Tac Toe</button>
-                <button class="btn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = 'connect4.html'">Connect Four</button>
-                <button class="btn" onclick="window.location.href = 'reversi.html'">Reversi</button>
+				<button class="nav2btn" onclick="window.location.href = '../misc/clocks.html'">Clocks</button>
+                <button class="nav2btn" onclick="window.location.href = 'tictactoe.html'">Tic Tac Toe</button>
+                <button class="nav2btn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = 'connect4.html'">Connect Four</button>
+                <button class="nav2btn" onclick="window.location.href = 'reversi.html'">Reversi</button>
             </div>
         </section>
 		<div id="outerdiv">
 			<fieldset id="scores">
 				<p id="p1Score" class="scoreboard"></p> 
 				<p id="p2Score" class="scoreboard"></p>
-				<button class="btn2" onclick="resetScores()" id="resetBtn" >Reset scores</button>
+				<button class="projBtn" onclick="resetScores()" id="resetBtn" >Reset scores</button>
 			</fieldset>
 			<div id="overText">
 				Player 1, click to start.
 			</div>
 			<!--<div>
-				<button id="showPlayer" class="btn2" onclick="showPlayerNum()">Show player number</button>
+				<button id="showPlayer" class="projBtn" onclick="showPlayerNum()">Show player number</button>
 			</div>-->
 		</div>
 		<div>
-			<button onclick="replay()" class="btn2" id="startBtn" style="display: none"></button>
+			<button onclick="replay()" class="projBtn" id="startBtn" style="display: none"></button>
 			<canvas id="myCanvas" >blah</canvas>
 		</div>
 	</body>

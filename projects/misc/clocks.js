@@ -126,7 +126,7 @@ function createClock(_name, _diff, _arc, _hands, _24hr) {
   var btnsNav = document.createElement("div");
   btnsNav.setAttribute("class", "btnsDiv");
   var handsArc = document.createElement("button");
-  handsArc.setAttribute("class", "btn2");
+  handsArc.setAttribute("class", "projBtn");
   handsArc.onclick = function() {
     showArcs = !showArcs;
     showHands = !showHands;
@@ -145,7 +145,7 @@ function createClock(_name, _diff, _arc, _hands, _24hr) {
 
   if(showTime){
     var _24or12 = document.createElement("button");
-    _24or12.setAttribute("class", "btn2");
+    _24or12.setAttribute("class", "projBtn");
     _24or12.style.float = "right";
     var _24txt = _24hour  ? "12 hr" : "24 hr";
     _24or12.innerHTML = _24txt;

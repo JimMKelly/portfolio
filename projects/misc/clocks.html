@@ -7,17 +7,18 @@
         <link rel="stylesheet" type="text/css" href="clocks.css">
         <script type="text/javascript" src="clocks.js"></script>
     </head>
+
     <body onload="loadCities()">
         <section class="gamesbtns">
             <div>
-                <button id="homebtn" class="btn" onclick="window.location.href = '../../index.html'">Home</button>
-                <button class="btn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = '../projects.html'">Projects</button>
+                <button id="homebtn" class="navBtn" onclick="window.location.href = '../../index.html'">Home</button>
+                <button class="navBtn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = '../projects.html'">Projects</button>
             </div>
             <div>
-                <button class="btn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = 'clocks.html'">Clocks</button>
-                <button class="btn" onclick="window.location.href = '../games/tictactoe.html'">Tic Tac Toe</button>
-                <button class="btn" onclick="window.location.href = '../games/connect4.html'">Connect Four</button>
-                <button class="btn" onclick="window.location.href = '../games/reversi.html'">Reversi</button>
+                <button class="nav2btn" style="color: rgba(255, 0, 0, 0.726)" onclick="window.location.href = 'clocks.html'">Clocks</button>
+                <button class="nav2btn" onclick="window.location.href = '../games/tictactoe.html'">Tic Tac Toe</button>
+                <button class="nav2btn" onclick="window.location.href = '../games/connect4.html'">Connect Four</button>
+                <button class="nav2btn" onclick="window.location.href = '../games/reversi.html'">Reversi</button>
             </div>
         </section>   
         <fieldset id="fsMain" class="fieldsetClass">
@@ -25,10 +26,11 @@
                 <option value="none">Select a city</option>
             </select>
             <div>
-                <button class="btn2" onclick="newClock()">Add Clock</button>
-                <button class="btn2" onclick="resetAll()" id="resetBtn" style="display: none; float: none;">Remove all clocks</button>
+                <button class="projBtn" onclick="newClock()">Add Clock</button>
+                <button class="projBtn" onclick="resetAll()" id="resetBtn" style="display: none; float: none;">Remove all clocks</button>
             </div>
             <div id="clocksDiv"></div>
         </fieldset>
     </body>
+ 
 </html>
