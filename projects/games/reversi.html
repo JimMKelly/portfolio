@@ -8,16 +8,16 @@
 	</head>
 
 	<body onload="updateBoard()">
-		<section class="gamesbtns">
+		<section id="navbar" class="gamesbtns">
             <div>
 				<button id="homebtn" class="navBtn" onclick="window.location.href = '../../index.html'">Home</button>
-				<button class="navBtn" style="background: var(--medium); color: var(--dark);" onclick="window.location.href = '../projects.html'">Projects</button>
+				<button class="navBtn selectedBtn" onclick="window.location.href = '../projects.html'">Projects</button>
 			</div>
             <div>
 				<button class="nav2btn" onclick="window.location.href = '../misc/clocks.html'">Clocks</button>
 				<button class="nav2btn" onclick="window.location.href = 'tictactoe.html'">Tic Tac Toe</button>
                 <button class="nav2btn" onclick="window.location.href = 'connect4.html'">Connect Four</button>
-                <button class="nav2btn" style="background: var(--medium); color: var(--dark);" onclick="window.location.href = 'reversi.html'">Reversi</button>
+                <button class="nav2btn selectedBtn" onclick="window.location.href = 'reversi.html'">Reversi</button>
             </div>
         </section>   
 		<div id="outerdiv">
@@ -38,5 +38,6 @@
 			<button onclick="replay()" class="projBtn" id="startBtn" style="display: none"></button>
 			<canvas id="myCanvas" >blah</canvas>
 		</div>
+		<!--<script type="text/javascript" src="../../formatting.js"></script>-->
 	</body>
 </html>

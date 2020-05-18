@@ -1,3 +1,7 @@
+var screenWidth = window.screen.width;
+var sizeOfCells = screenWidth / 8;
+screenWidth > 320 ? sizeOfCells = 50 : sizeOfCells = screenWidth / 8;
+
 var turns = 0;
 var playerTurn = 1;
 var playerChar = "";
@@ -280,7 +284,7 @@ function updateBoard() {
 	document.getElementById('p2Score').innerHTML = "Player 2: " + localStorage.getItem("rp2Score");
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext("2d");
-	var w = board[0].length * 100;
+	var w = board[0].length * sizeOfCells;
 	var h = w;
 	ctx.canvas.width  = w;
 	ctx.canvas.height = h;
@@ -302,8 +306,8 @@ function updateBoard() {
 			var x = ev.pageX - canvas.offsetLeft;
 			var y = ev.pageY - canvas.offsetTop;
 	
-			cellChoice.x = Math.floor(x/100) + 1;
-			cellChoice.y = Math.floor(y/100) + 1;
+			cellChoice.x = Math.floor(x/sizeOfCells) + 1;
+			cellChoice.y = Math.floor(y/sizeOfCells) + 1;
 			//console.log("x: " + cellChoice.x + " y: " + cellChoice.y);
 			if(cellChoice.x != 0) {
 				if(isValid(cellChoice)) {
@@ -402,21 +406,21 @@ function drawBoard() {
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext("2d");
 
-	ctx.font = "50px Arial";
+	ctx.font = "30px Arial";
 	let rows = board.length;
 	let cols = board[0].length;
-	let cellSize = 50;
+	let pad = sizeOfCells / 2;
 	for(let i= 0; i < rows; i++) {
 		for(let j= 0; j < cols; j++) {
-			var xPos = j*100 + cellSize;
-			var yPos = i*100 + cellSize;
+			var xPos = j*sizeOfCells + pad;
+			var yPos = i*sizeOfCells + pad;
 			//Draw grid
 			ctx.beginPath();
-			ctx.moveTo(xPos - cellSize,yPos - cellSize);
-			ctx.lineTo(xPos + cellSize,yPos - cellSize);
-			ctx.lineTo(xPos + cellSize,yPos + cellSize);
-			ctx.lineTo(xPos - cellSize,yPos + cellSize);
-			ctx.lineTo(xPos - cellSize,yPos - cellSize);
+			ctx.moveTo(xPos - pad,yPos - pad);
+			ctx.lineTo(xPos + pad,yPos - pad);
+			ctx.lineTo(xPos + pad,yPos + pad);
+			ctx.lineTo(xPos - pad,yPos + pad);
+			ctx.lineTo(xPos - pad,yPos - pad);
 			ctx.closePath();
 			ctx.fillStyle = "grey";
 			ctx.fill();
@@ -426,21 +430,21 @@ function drawBoard() {
 			if(board[i][j] == p1Char || (winner == 1 && board[i][j] == winChar)) {
 				ctx.fillStyle = "rgb(27, 143, 33)";
 				ctx.beginPath();
-				ctx.arc(xPos, yPos, 44, 0, 2*Math.PI);
+				ctx.arc(xPos, yPos, (pad*0.9), 0, 2*Math.PI);
 				ctx.fill();
 					
 			//Draw P2
 			} else if(board[i][j] == p2Char || (winner == 2 && board[i][j] == winChar)){
 				ctx.fillStyle = "rgb(217, 44, 60)";
 				ctx.beginPath();
-				ctx.arc(xPos, yPos, 44, 0, 2*Math.PI);
+				ctx.arc(xPos, yPos, (pad*0.9), 0, 2*Math.PI);
 				ctx.fill();
 			
 			//Draw available moves
 			} else if((board[i][j] == availChar) && showAvail){
 				ctx.fillStyle = "rgb(147, 150, 147)";
 				ctx.beginPath();
-				ctx.arc(xPos, yPos, 44, 0, 2*Math.PI);
+				ctx.arc(xPos, yPos, (pad*0.9), 0, 2*Math.PI);
 				ctx.fill();
 			}
 		}

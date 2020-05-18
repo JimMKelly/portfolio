@@ -10,7 +10,7 @@
 	<body>
 		<div class="wrapper">
 			<section id="navbar" class="navSection">
-				<button id="homebtn" class="navBtn" style="background: var(--medium); color: var(--dark);" onclick="window.location.href = 'index.html'">Home</button>
+				<button id="homebtn" class="navBtn selectedBtn" onclick="window.location.href = 'index.html'">Home</button>
 				<button class="navBtn" onclick="window.location.href = 'projects/projects.html'">Projects</button>
 				<button class="navBtn" onclick="window.location.href = 'resume.html'">Resume</button>
 				<button class="navBtn" onclick="window.location.href = 'about.html'">About</button>
@@ -23,25 +23,11 @@
 						<p><br/>James Kelly <br/>Web and Game Developer</p>
 					</div>	
 				</div>
-			</section>		
-			<section style="color: white">
+			</section>
+			<section  class="container info">
 				<p>blah<br/>blah<br/>blah<br/>blah<br/>blah<br/>blah<br/>blah<br/>blah<br/>blah<br/></p>
 			</section>
 		</div>
-		<script type="text/javascript">
-			// When the user scrolls the page, execute myFunction
-			window.onscroll = function() {stickyNav()};
-
-			var navbar = document.getElementById("navbar");
-			var sticky = navbar.offsetTop;
-
-			function stickyNav() {
-				if (window.pageYOffset >= sticky) {
-					navbar.classList.add("sticky")
-				} else {
-					navbar.classList.remove("sticky");
-				}
-			}
-		</script>
+		<script type="text/javascript" src="formatting.js"></script>
 	</body>
 </html>

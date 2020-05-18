@@ -135,12 +135,12 @@ function updateBoard() {
 	document.getElementById('p2Score').innerHTML = "Player 2: " + localStorage.getItem("tp2Score");
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext("2d");
-	var w = 400;
-	var h = 400;
+	var w = 300;
+	var h = 300;
 	var pad = 30;
 	ctx.canvas.width  = w + pad;
 	ctx.canvas.height = h + pad;
-	var s = w / 3;
+	var s = (w + pad) / 3;
 	canvas.addEventListener('mousedown', onCanvasClick, false);
 	function onCanvasClick() {
 		var ev = event;
@@ -310,5 +310,4 @@ function resetScores() {
 	localStorage.setItem("tp1Score",0);
 	localStorage.setItem("tp2Score",0);
 	replay();
-
 }

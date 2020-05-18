@@ -8,6 +8,7 @@ var winner = 0;
 var p1Tot = localStorage.getItem("c4p1Score")
 var p2Tot = localStorage.getItem("c4p2Score")
 var showPlayer = false;
+var colWidth = 50;
 
 var board = [
 		[' ',' ',' ',' ',' ',' ',' '],
@@ -98,8 +99,9 @@ function updateBoard() {
 	document.getElementById('p2Score').innerHTML = "Player 2: " + localStorage.getItem("c4p2Score");
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext("2d");
-	var w = 700;
-	var h = 600;
+//	var pad = colWidth / 2;
+	var w = board[0].length * colWidth;
+	var h = w / 7 * 6;
 	ctx.canvas.width  = w;
 	ctx.canvas.height = h;
 
@@ -108,22 +110,9 @@ function updateBoard() {
 		var ev = event;
 		var x = ev.pageX - canvas.offsetLeft;
 		var y = ev.pageY - canvas.offsetTop;
-		var colChoice = 0;
-		if(x >= 0 && x < 100) {
-			colChoice = 1;
-		} else if(x >= 100 && x < 200) {
-			colChoice = 2;
-		} else if(x >= 200 && x < 300) {
-			colChoice = 3;
-		} else if(x >= 300 && x < 400) {
-			colChoice = 4;
-		} else if(x >= 400 && x < 500) {
-			colChoice = 5;
-		} else if(x >= 500 && x < 600) {
-			colChoice = 6;
-		} else if(x >= 600 && x < 700) {
-			colChoice = 7;
-		}
+			
+		var colChoice = Math.floor(x/colWidth) + 1;
+
 		if(!colChoice == 0) {
 			if(!isValid(colChoice)) {
 				document.getElementById("overText").innerHTML = "That column is full, Player " + playerTurn + " try another.";
@@ -139,27 +128,29 @@ function updateBoard() {
 function drawBoard() {
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext("2d");
+	var pad = colWidth / 2;
 
-	ctx.font = "50px Arial";
+	ctx.font = "30px Arial";
 	let rows = board.length;
 	let cols = board[0].length;
 	for(let i= 0; i < rows; i++) {
 		for(let j= 0; j < cols; j++) {
-			var xPos = j*100 + 50;
-			var yPos = (4-i)*100 + 150;
-			//Draw grid
+			//Get X and Y positions
+			var xPos = j*colWidth + pad;
+			var yPos = (4-i)*colWidth + colWidth + pad;
+			//###Draw grid###
 			//Draw squares
 			ctx.beginPath();
-			ctx.moveTo(xPos - 50,yPos - 50);
-			ctx.lineTo(xPos + 50,yPos - 50);
-			ctx.lineTo(xPos + 50,yPos + 50);
-			ctx.lineTo(xPos - 50,yPos + 50);
-			ctx.lineTo(xPos - 50,yPos - 50);
+			ctx.moveTo(xPos - pad, yPos - pad);
+			ctx.lineTo(xPos + pad, yPos - pad);
+			ctx.lineTo(xPos + pad, yPos + pad);
+			ctx.lineTo(xPos - pad, yPos + pad);
+			ctx.lineTo(xPos - pad, yPos - pad);
 			ctx.closePath();
 
 			//Draw cricles
-			ctx.moveTo(xPos + 45,yPos);
-			ctx.arc(xPos, yPos, 45, 2*Math.PI, 0,true);
+			ctx.moveTo(xPos + (pad*0.9), yPos);
+			ctx.arc(xPos, yPos, (pad*0.9), 2*Math.PI, 0,true);
 			ctx.closePath();
 			//ctx.fillStyle = "grey";
 			ctx.fillStyle = "rgb(54, 125, 217)";
@@ -169,7 +160,7 @@ function drawBoard() {
 			if(board[i][j] == p1Char || (winner == 1 && board[i][j] == winChar)) {
 				ctx.fillStyle = "rgb(27, 143, 33)";
 				ctx.beginPath();
-				ctx.arc(xPos, yPos, 44, 0, 2*Math.PI);
+				ctx.arc(xPos, yPos, ((pad*0.9) - 2), 0, 2*Math.PI);
 				ctx.fill();
 				if(showPlayer || (winner == 1 && board[i][j] == winChar)){
 					ctx.fillStyle = "black";
@@ -181,7 +172,7 @@ function drawBoard() {
 			} else if(board[i][j] == p2Char || (winner == 2 && board[i][j] == winChar)){
 				ctx.fillStyle = "rgb(217, 44, 60)";
 				ctx.beginPath();
-				ctx.arc(xPos, yPos, 44, 0, 2*Math.PI);
+				ctx.arc(xPos, yPos, ((pad*0.9) - 2), 0, 2*Math.PI);
 				ctx.fill();
 				if(showPlayer || (winner == 2 && board[i][j] == winChar)){
 					ctx.fillStyle = "black";
@@ -253,10 +244,8 @@ function resetScores() {
 	localStorage.setItem("c4p1Score",0);
 	localStorage.setItem("c4p2Score",0);
 	replay();
-
 }
 
 function replay() {
 	window.location.reload();
 }
-
