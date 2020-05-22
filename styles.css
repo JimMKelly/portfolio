@@ -158,6 +158,7 @@ body {
   color: var(--p1Col);
   margin: auto;
   width: fit-content;
+  text-align: center;
 }
 
 #scores {
@@ -191,6 +192,7 @@ fieldset {
 }
 
 #outerdiv {
+  width: 100%;
   display: flex;
   grid-gap: 20px;
   height: fit-content;
@@ -210,14 +212,24 @@ fieldset {
     padding: 0.3rem 0.3rem;
     font-size: 15px;
   }
-
   #overText {
     font-size: 20px;
     transform: translate(0%);
+    text-align: center;
   }
-  
   #scores {
     margin-left: 0%;
+    font-size: 12px;
   }
-
+  .column1 {
+    width: 40%;
+  }
+  .column2 {
+    float: left;
+    width: 40%;
+  }
+  .column3 {
+    float: left;
+    width: 30%;
+  }
 }
