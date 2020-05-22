@@ -316,6 +316,7 @@ select {
 @media(max-width: 500px) {
   .btnSpan {
     width: 90%;
+    height: auto;
   }
   .gamesbtns {
     margin-top: 9%;
@@ -324,6 +325,7 @@ select {
 @media(max-width: 400px) {
   .btnSpan {
     width: 100%;
+    height: auto;
   }
   .gamesbtns {
     margin-top: 10%;
