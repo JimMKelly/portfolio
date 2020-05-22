@@ -20,17 +20,19 @@
                 <button class="nav2btn" onclick="window.location.href = '../games/connect4.html'">Connect Four</button>
                 <button class="nav2btn" onclick="window.location.href = '../games/reversi.html'">Reversi</button>
             </div>
-        </section>   
-        <fieldset id="fsMain" class="fieldsetClass">
-            <select id="cities">
-                <option value="none">Select a city</option>
-            </select>
-            <div>
-                <button class="projBtn" onclick="newClock()">Add Clock</button>
-                <button class="projBtn" onclick="resetAll()" id="resetBtn" style="display: none; float: none;">Remove all clocks</button>
-            </div>
-            <div id="clocksDiv"></div>
-        </fieldset>
+        </section>
+        <section class="clockSection">
+            <fieldset id="fsMain" class="fieldsetClass">
+                <select id="cities">
+                    <option value="none">Select a city</option>
+                </select>
+                <div>
+                    <button class="projBtn" onclick="newClock()">Add Clock</button>
+                    <button class="projBtn" onclick="resetAll()" id="resetBtn" style="display: none; float: none;">Remove all clocks</button>
+                </div>
+                <div id="clocksDiv"></div>
+            </fieldset>
+        </section>
 		<!--<script type="text/javascript" src="../../formatting.js"></script>-->
     </body>
  

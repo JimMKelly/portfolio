@@ -86,12 +86,12 @@ body {
 
 .btnSpan {
   display: inline-flex;
+  width: 50%;
+  height: fit-content;
   background-color: var(--transparent);
   margin-bottom: 0.6rem;
   margin-top: 0.6rem;
 }
-
-
 
 /*####Buttons#####*/
 /*##Navigation buttons*/
@@ -116,9 +116,9 @@ body {
 /*###Image buttons###*/
 .imgBtn {
   font-size: 20px;
+  margin: 1rem;
+  width: 70%;
   height: auto;
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
 }
 .imgs {
   height: 300px;
@@ -126,7 +126,11 @@ body {
   max-width: 100%;
 }
 .imgBtnText {
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: justify;
+  padding-right: 1rem;
+  padding-left: 0.25rem;
 }
 
 /*##Project buttons*/
@@ -229,6 +233,15 @@ fieldset {
 }
 
 
+/*###Clocks###*/
+select {
+  color: var(--light);
+  background-color: var(--medium);
+}
+.clockSection {
+  display: flex;
+}
+
 /* Media Queries */
 @media(max-width: 700px) {
   .centered {
@@ -248,9 +261,6 @@ fieldset {
   .imgs {
     height: auto;
     width: 150px;
-  }
-  .imgBtnText {
-    max-height: 100px;
   }
   #overText {
     font-size: 20px;
@@ -273,5 +283,34 @@ fieldset {
     width: 30%;
   }
 
-
+}
+@media(max-width: 900px) {
+  .btnSpan {
+    width: 80%;
+  }
+}
+@media(max-width: 800px) {
+  .btnSpan {
+    width: 80%;
+  }
+}
+@media(max-width: 700px) {
+  .btnSpan {
+    width: 80%;
+  }
+}
+@media(max-width: 600px) {
+  .btnSpan {
+    width: 80%;
+  }
+}
+@media(max-width: 500px) {
+  .btnSpan {
+    width: 90%;
+  }
+}
+@media(max-width: 400px) {
+  .btnSpan {
+    width: 100%;
+  }
 }
