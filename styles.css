@@ -5,6 +5,8 @@
   --light: #fff;
   --medium: rgb(112, 111, 111);
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --p1Col: rgb(27, 143, 33);
+  --p2Col: 217, 44, 60;
 }
 
 html {
@@ -17,11 +19,6 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
-  /*background-image: url('images/space1.jpg');
-  background-repeat: no-repeat;
-  overflow-x: scroll;
-  overflow-y: scroll;
-  background-size: cover;*/
 }
 
 .wrapper {
@@ -33,7 +30,7 @@ body {
 .navSection {
   display: inline;
   text-align: center;
-  background-color: rgba(87, 112, 112,0.2);
+  background-color: rgba(87, 112, 112,0.5);
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -57,7 +54,7 @@ body {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
+  margin-top: 10%;
   width: 80%;
   height: 100%;
   text-align: center;
@@ -75,7 +72,7 @@ body {
 .contdiv {
   margin-top: 10%;
   width: 100%;
-  height: 100%;
+  height: 80%;
   background-color: rgba(87, 112, 112,0.2);
 }
 
@@ -148,7 +145,7 @@ body {
   width: auto;
   margin: auto;
   text-align: justify;
-  color: rgb(179, 167, 171);
+  color: var(--p1Col);
   transform: translate(-50%);
 }
 
@@ -192,6 +189,14 @@ fieldset {
 @media(max-width: 700px) {
   .centered {
     font-size: smaller;
+    top: 20%;
+  }
+
+  .navBtn {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    padding: 0.3rem 0.3rem;
+    font-size: 15px;
   }
 
   #overText {
@@ -199,8 +204,8 @@ fieldset {
     transform: translate(0%);
   }
   
-#scores {
-  margin-left: 0%;
-}
+  #scores {
+    margin-left: 0%;
+  }
 
 }

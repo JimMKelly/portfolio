@@ -5,8 +5,9 @@ var p1Char = "1";
 var p2Char = "2";
 var winChar = "W";
 var winner = 0;
-var p1Tot = localStorage.getItem("tp1Score")
-var p2Tot = localStorage.getItem("tp2Score")
+var p1Tot = localStorage.getItem("tp1Score");
+var p2Tot = localStorage.getItem("tp2Score");	
+
 var board = [
 		[' ',' ',' '],
 		[' ',' ',' '],
@@ -29,6 +30,7 @@ function nextTurn(col) {
 				p2Tot++;
 				localStorage.setItem("tp2Score",p2Tot);
 				document.getElementById('p2Score').innerHTML = "Player 2: " + localStorage.getItem("tp2Score");
+				
 			}
 			document.getElementById("overText").innerHTML = winTxt;
 			document.getElementById("startBtn").innerHTML = "Play again?";
@@ -44,6 +46,11 @@ function nextTurn(col) {
 		}
 		playerTurn = 3 - playerTurn;
 		var txt = "Player " + playerTurn + "'s turn!";
+		if(playerTurn==1){
+			document.getElementById("overText").style.color = "rgb(27, 143, 33)";
+		} else if(playerTurn==2) {
+			document.getElementById("overText").style.color = "rgb(217, 44, 60)";
+		}
 		document.getElementById("overText").innerHTML = txt;
 		turns++;
 	}
@@ -226,15 +233,13 @@ function drawBoard() {
 				ctx.lineTo(xPos - p,yPos + p);
 				ctx.lineTo(xPos - p,yPos - p);
 				ctx.closePath();
-				ctx.fillStyle = "rgba(54, 125, 217, 0.5)";
-				//ctx.fillStyle = "pink";
+				ctx.fillStyle = "rgb(147, 150, 147)";
 				ctx.fill();
 				ctx.stroke();
 			}
 			
 			if(board[i][j] == p1Char || (winner == 1 && board[i][j] == winChar)) {
 				//Draw O
-				//ctx.fillStyle = "rgb(54, 125, 217)";
 				ctx.fillStyle = "rgb(27, 143, 33)";
 				ctx.beginPath();
 				ctx.arc(xPos, yPos, 50, 0, 2*Math.PI);

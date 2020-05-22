@@ -274,6 +274,11 @@ function nextTurn(cellChoice) {
 	playerTurn = 3 - playerTurn;
 	var txt = "Player " + playerTurn + "'s turn!";
 	document.getElementById("overText").innerHTML = txt;
+	if(playerTurn==1){
+		document.getElementById("overText").style.color = "rgb(27, 143, 33)";
+	} else if(playerTurn==2) {
+		document.getElementById("overText").style.color = "rgb(217, 44, 60)";
+	}
 	turns++;
 	checkCanMove();
 	checkWin();

@@ -60,6 +60,11 @@ function nextTurn(col) {
 			},1000);
 		}
 		playerTurn = 3 - playerTurn;
+		if(playerTurn==1){
+			document.getElementById("overText").style.color = "rgb(27, 143, 33)";
+		} else if(playerTurn==2) {
+			document.getElementById("overText").style.color = "rgb(217, 44, 60)";
+		}
 		var txt = "Player " + playerTurn + "'s turn!";
 		document.getElementById("overText").innerHTML = txt;
 		turns++;
