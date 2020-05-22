@@ -256,10 +256,10 @@ select {
   .imgBtn {
     font-size: 14;
   }
-  .imgs {
+  /*.imgs {
     height: auto;
     width: 150px;
-  }
+  }*/
   #overText {
     font-size: 20px;
     transform: translate(0%);
