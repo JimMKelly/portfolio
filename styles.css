@@ -56,6 +56,10 @@ body {
 .gamesbtns {
   display: grid;
   text-align: center;
+}
+.gameSection {
+  display: grid;
+  text-align: center;
   margin-top: 5%;
 }
 
@@ -284,6 +288,7 @@ select {
 @media(max-width: 900px) {
   .btnSpan {
     width: 80%;
+    height: auto;
   }
   .gamesbtns {
     margin-top: 5%;
@@ -292,8 +297,9 @@ select {
 @media(max-width: 800px) {
   .btnSpan {
     width: 80%;
+    height: auto;
   }
-  .gamesbtns {
+  .gameSection {
     margin-top: 6%;
   }
 }
@@ -301,7 +307,7 @@ select {
   .btnSpan {
     width: 80%;
   }
-  .gamesbtns {
+  .gameSection {
     margin-top: 7%;
   }
 }
@@ -309,16 +315,15 @@ select {
   .btnSpan {
     width: 80%;
   }
-  .gamesbtns {
+  .gameSection {
     margin-top: 8%;
   }
 }
 @media(max-width: 500px) {
   .btnSpan {
     width: 90%;
-    height: auto;
   }
-  .gamesbtns {
+  .gameSection {
     margin-top: 9%;
   }
 }
@@ -327,7 +332,7 @@ select {
     width: 100%;
     height: auto;
   }
-  .gamesbtns {
+  .gameSection {
     margin-top: 10%;
   }
 }

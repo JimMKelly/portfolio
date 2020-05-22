@@ -10,8 +10,10 @@ var p2Char = "2";
 var availChar = "A";
 var winChar = "W";
 var winner = 0;
-var p1Tot = localStorage.getItem("rp1Score")
-var p2Tot = localStorage.getItem("rp2Score")
+var p1Tot = 0;
+p1Tot = localStorage.getItem("rp1Score");
+var p2Tot = 0;
+p2Tot = localStorage.getItem("rp2Score");
 var p1Count = 0;
 var p2Count = 0;
 var showPlayer = false;
@@ -81,8 +83,9 @@ function countPieces() {
 			}
 		}
 	}
+	/*
 	document.getElementById("p1Total").innerHTML = "Player 1 has " + p1Count;
-	document.getElementById("p2Total").innerHTML = "Player 2 has " + p2Count;
+	document.getElementById("p2Total").innerHTML = "Player 2 has " + p2Count;*/
 }
 
 function checkFlip(cellChoice) {
@@ -272,7 +275,9 @@ function nextTurn(cellChoice) {
 	flipPieces(cellChoice);
 	countPieces();
 	playerTurn = 3 - playerTurn;
-	var txt = "Player " + playerTurn + "'s turn!";
+	var p1txt = "Player 1 has " + p1Count + " pieces.</br>";
+	var p2txt = "Player 2 has " + p2Count + " pieces.</br>"; 
+	var txt =  "Player " + playerTurn + "'s turn!";
 	document.getElementById("overText").innerHTML = txt;
 	if(playerTurn==1){
 		document.getElementById("overText").style.color = "rgb(27, 143, 33)";
@@ -386,7 +391,8 @@ function isValid(cellChoice) {
 		checkWin();
 		return false;
 	}
-
+	var p1txt = "Player 1 has " + p1Count + " pieces.</br>";
+	var p2txt = "Player 2 has " + p2Count + " pieces.</br>"; 
 	if(board[y][x] == p1Char || board[y][x] == p2Char) {
 		document.getElementById("overText").innerHTML = "Player " + playerTurn + " that spot is already taken! <br> Choose somewhere else!";
 		return false;
