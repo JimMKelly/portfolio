@@ -118,7 +118,7 @@ body {
 .imgBtn {
   font-size: 20px;
   margin: 1rem;
-  /*width: 70%;*/
+  width: 70%;
   height: auto;
 }
 .imgs {
@@ -166,9 +166,6 @@ body {
   position: relative;
   color: beige;
   top: 10%;
-  /*left: 50%;
-  transform: translate(-50%);*/
-  /*transform: translate(-50%, -10%);*/
   font-size: 50px;
   margin-bottom: 1em;
 }
