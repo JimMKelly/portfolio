@@ -10,10 +10,8 @@ var p2Char = "2";
 var availChar = "A";
 var winChar = "W";
 var winner = 0;
-var p1Tot = 0;
-p1Tot = localStorage.getItem("rp1Score");
-var p2Tot = 0;
-p2Tot = localStorage.getItem("rp2Score");
+var p1Tot = localStorage.getItem("rp1Score");
+var p2Tot = localStorage.getItem("rp2Score");
 var p1Count = 0;
 var p2Count = 0;
 var showPlayer = false;
@@ -275,10 +273,10 @@ function nextTurn(cellChoice) {
 	flipPieces(cellChoice);
 	countPieces();
 	playerTurn = 3 - playerTurn;
-	var p1txt = "Player 1 has " + p1Count + " pieces.</br>";
-	var p2txt = "Player 2 has " + p2Count + " pieces.</br>"; 
-	var txt =  "Player " + playerTurn + "'s turn!";
-	document.getElementById("overText").innerHTML = txt;
+	var p1txt = "<span style='color:rgb(27,143,33); font-size: 20px;'>Player 1 has " + p1Count + " pieces.</span></br>";
+	var p2txt = "<span style='color:rgb(217,44,60); font-size: 20px;'>Player 2 has " + p2Count + " pieces.</span></br>";
+	var txt =  "It is Player " + playerTurn + "'s turn!";
+	document.getElementById("overText").innerHTML = p1txt + p2txt + txt;
 	if(playerTurn==1){
 		document.getElementById("overText").style.color = "rgb(27, 143, 33)";
 	} else if(playerTurn==2) {
@@ -390,9 +388,7 @@ function isValid(cellChoice) {
 	if(moves == 0){
 		checkWin();
 		return false;
-	}
-	var p1txt = "Player 1 has " + p1Count + " pieces.</br>";
-	var p2txt = "Player 2 has " + p2Count + " pieces.</br>"; 
+	} 
 	if(board[y][x] == p1Char || board[y][x] == p2Char) {
 		document.getElementById("overText").innerHTML = "Player " + playerTurn + " that spot is already taken! <br> Choose somewhere else!";
 		return false;

@@ -234,15 +234,6 @@ fieldset {
   height: fit-content;
 }
 
-/*###Clocks###*/
-select {
-  color: var(--light);
-  background-color: var(--medium);
-}
-.clockSection {
-  display: flex;
-}
-
 /* Media Queries */
 @media(max-width: 700px) {
   .centered {

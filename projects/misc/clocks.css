@@ -20,3 +20,12 @@
 .textClass {
   font-size: 1.2em;
 }
+
+/*###Clocks###*/
+select {
+  color: var(--light);
+  background-color: var(--medium);
+}
+.clockSection {
+  display: flex;
+}
