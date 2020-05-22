@@ -21,12 +21,15 @@
             </div>
         </section>   
 		<div id="outerdiv">
-			<fieldset id="scores">
-				<p id="p1Score" class="scoreboard"></p> 
-				<p id="p2Score" class="scoreboard"></p>
-				<button onclick="resetScores()" class="projBtn" id="resetBtn" >Reset scores</button>
-			</fieldset>
-			<div id="overText">Player 1, click to start.</div>
+			<div class="column1">
+				<fieldset id="scores" >
+					<p id="p1Score" class="scoreboard"></p> 
+					<p id="p2Score" class="scoreboard"></p>
+					<button onclick="resetScores()" class="projBtn" id="resetBtn" >Reset scores</button>
+				</fieldset>
+			</div>
+			<div id="overText" class="column2">Player 1, click to start.</div>
+			<div class = "column3"></div>
 		</div>
 		<div>
 			<button onclick="replay()" class="projBtn" id="startBtn" style="display: none"></button>

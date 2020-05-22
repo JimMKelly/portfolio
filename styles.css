@@ -139,20 +139,32 @@ body {
 }
 
 /*############ GAMES #############*/
+.column1 {
+  float: left;
+  width: 25%;
+}
+.column2 {
+  float: left;
+  width: 50%;
+}
+.column3 {
+  float: left;
+  width: 25%;
+}
+
 #overText {
   font-size: 30px;
   padding: 0;
-  width: auto;
-  margin: auto;
-  text-align: justify;
   color: var(--p1Col);
-  transform: translate(-50%);
+  margin: auto;
+  width: fit-content;
 }
 
 #scores {
   margin-left: 2%;
-  margin-right: 10%;
+  margin-right: 5%;
   font-size: 14px;
+  width: fit-content;
 }
 
 .scoreboard {
