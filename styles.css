@@ -5,8 +5,16 @@
   --light: #fff;
   --medium: rgb(112, 111, 111);
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --transparent: rgba(87, 112, 112,0.5);
   --p1Col: rgb(27, 143, 33);
   --p2Col: 217, 44, 60;
+}
+* {
+  color: var(--primary);
+}
+
+h1 {
+  text-decoration: underline;
 }
 
 html {
@@ -30,7 +38,7 @@ body {
 .navSection {
   display: inline;
   text-align: center;
-  background-color: rgba(87, 112, 112,0.5);
+  background-color: var(--transparent);
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -76,9 +84,15 @@ body {
   background-color: rgba(87, 112, 112,0.2);
 }
 
-.info {
-  color: white;
+.btnSpan {
+  display: inline-flex;
+  background-color: var(--transparent);
+  margin-bottom: 0.6rem;
+  margin-top: 0.6rem;
 }
+
+
+
 /*####Buttons#####*/
 /*##Navigation buttons*/
 .navBtn, .nav2btn, .projBtn {
@@ -93,10 +107,26 @@ body {
   text-decoration: none;
   border: 0;
 }
-/*##2nd level nav buttons*/
+/*##2nd level nav buttons##*/
 .nav2btn {
   font-size: 16px;
   padding: 0.4rem 0.8rem;
+}
+
+/*###Image buttons###*/
+.imgBtn {
+  font-size: 20px;
+  height: auto;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+.imgs {
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+}
+.imgBtnText {
+  margin: auto;
 }
 
 /*##Project buttons*/
@@ -105,7 +135,7 @@ body {
   padding: 0.3rem 0.5rem;
 }
 
-.navBtn:hover, .nav2btn:hover, .projBtn:hover {
+.navBtn:hover, .nav2btn:hover, .projBtn:hover{
   background-color: var(--primary);
   color: var(--dark);
 }
@@ -212,6 +242,16 @@ fieldset {
     padding: 0.3rem 0.3rem;
     font-size: 15px;
   }
+  .imgBtn {
+    font-size: 14;
+  }
+  .imgs {
+    height: auto;
+    width: 150px;
+  }
+  .imgBtnText {
+    max-height: 100px;
+  }
   #overText {
     font-size: 20px;
     transform: translate(0%);
@@ -232,4 +272,6 @@ fieldset {
     float: left;
     width: 30%;
   }
+
+
 }
