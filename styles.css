@@ -17,6 +17,10 @@ h1 {
   text-decoration: underline;
 }
 
+.linkBtn {
+  height: auto;
+}
+
 html {
   height: 100%;
   width: auto;
@@ -67,7 +71,7 @@ body {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 5%;
   width: 80%;
   height: 100%;
   text-align: center;
@@ -99,6 +103,12 @@ body {
 }
 .bio {
   text-align: left;
+}
+
+.links {
+  display: inline;
+  text-align: center;
+  z-index: 1;
 }
 
 /*####Buttons#####*/
@@ -147,13 +157,16 @@ body {
   padding: 0.3rem 0.5rem;
 }
 
-.navBtn:hover, .nav2btn:hover, .projBtn:hover{
+.navBtn:hover, .nav2btn:hover, .projBtn:hover, .linkBtn:hover{
   background-color: var(--primary);
   color: var(--dark);
 }
 .navBtn:active, .nav2btn:active, .projBtn:active {
   background-color: var(--light);
   color: var(--dark);
+}
+.email {
+  padding-bottom: 1.1rem;
 }
 
 .selectedBtn {
