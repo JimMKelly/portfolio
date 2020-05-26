@@ -172,7 +172,7 @@ function addCity(city){
     currtempDiv.appendChild(span1);
 
     //Formula for Celsius
-    let celsius = tempDeg.toFixed(1);
+    let celsius = tempDeg;
     let fahreinheit = (celsius * 9 / 5 + 32).toFixed(1);
 
     currtempDiv.addEventListener('click', () => {
