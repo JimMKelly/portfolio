@@ -52,11 +52,11 @@ function getCityData(){
     }
     cityIds = cityIds.substring(0, cityIds.length - 1);
     /*### USE PROXY FOR WORKING IN LOCAL DIRECTORY### */
-    //const proxy = 'https://cors-anywhere.herokuapp.com/';
-    //const api = `${proxy}http://api.openweathermap.org/data/2.5/group?id=${cityIds}&units=metric&appid=${apiKey}&units=metric`
+    const proxy = 'https://cors-anywhere.herokuapp.com/';
+    const api = `${proxy}http://api.openweathermap.org/data/2.5/group?id=${cityIds}&units=metric&appid=${apiKey}&units=metric`
     
     //###USE ON LIVE SERVER###
-   const api = `http://api.openweathermap.org/data/2.5/group?id=${cityIds}&units=metric&appid=${apiKey}&units=metric`
+   //const api = `http://api.openweathermap.org/data/2.5/group?id=${cityIds}&units=metric&appid=${apiKey}&units=metric`
 
     fetch(api)
     .then(response =>{
