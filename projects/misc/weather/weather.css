@@ -1,0 +1,77 @@
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+
+#loader {
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    text-align: center;
+}
+
+.spinLoader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #44494d; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  
+.wrapper {
+    margin: auto;
+}
+.selectBtns {
+    text-align: center;
+    margin: auto;
+}
+select {
+    color: var(--light);
+    background-color: var(--medium);
+}
+  
+.fieldsetClass {
+    margin: auto;
+    display: inline-flex;
+    height: auto;
+    background-color: rgba(87, 112, 112,0.2);
+  }
+
+.location, .temperature {
+    height: 25vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.temperature {
+    flex-direction: column;
+}
+.degree-section {
+    display: contents;
+    align-items: center;
+    cursor: pointer;
+}
+.temperature span{
+    margin: 10px;
+    font-size: 30px;
+}
+.degree-section h2 {
+    font-size: 40px;
+}
+.temperature-section {
+    display: flex;
+}
+#citiesDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+.weatherSection {
+    display: flex;
+}
