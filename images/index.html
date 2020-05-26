@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Portfolio - James</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="it=edge" />
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+		<div id="wrapper" class="wrapper">
+			<section id="navbar" class="navSection">
+				<button id="homebtn" class="navBtn selectedBtn" onclick="window.location.href = 'index.html'">Home</button>
+				<button class="navBtn" onclick="window.location.href = 'projects/projects.html'">Projects</button>
+				<button class="navBtn" onclick="window.location.href = 'resume.html'">Resume</button>
+				<button class="navBtn" onclick="window.location.href = 'about.html'">About</button>
+			</section>
+			<section class="container">
+				<img id="profilePic" class="top-center" src= "images/profile1.jpg" alt="photo">
+				<div class="contdiv">
+					<div class="centered">
+						<p><br/>James Kelly <br/>Web and Game Developer</p>
+					</div>	
+				</div>
+			</section>
+			<section  class="container links">
+				<button class = "navBtn linkBtn" onclick="window.open('https://www.linkedin.com/in/jamesmichaelkelly')" >
+					LinkedIn<br/><img height=30 src="images/linked in icon.png">
+				</button>
+				<button class = "navBtn linkBtn" onclick="window.open('https://github.com/JimMKelly')" >
+					Git Hub<br/><img height=30 src="images/github.png">
+				</button>
+				<button class = "navBtn linkBtn email" onclick="window.location.href = 'mailto:jim.m.kelly@gmail.com?'">Email<br/>&#9993;<br/></button>
+			</section>
+		</div>
+		<script type="text/javascript" src="formatting.js"></script>
+	</body>
+</html>
