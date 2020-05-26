@@ -115,7 +115,7 @@ function getData(cityName) {
 function addCity(city){
     //ADD CITY TO HTML
     var name = city.name;
-    var tempDeg = city.tempDeg;
+    var tempDeg = city.tempDeg.toFixed(1);
     var tempMin = city.tempMin;
     var tempMax = city.tempMax;
     var tempDescrip = city.tempDescrip;
