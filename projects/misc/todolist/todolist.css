@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 1.5rem;
+}
+
+header, form{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button{
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background-color: var(--medium);
+}
+form button{
+    color: var(--primary);
+    background: var(--darker);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+form button:hover{
+    background: var(--dark);
+    color: var(--light);
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-list{
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo{
+    margin: 0.5rem;
+    background: var(--dark);
+    color: var(--primary);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo li{
+    flex: 1;
+}
+.trash-btn, .complete-btn, .edit-btn{
+    background: #ff6f47;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.complete-btn{
+    color: var(--p1Col);
+    background: rgb(49, 131, 49);
+}
+.edit-btn{
+    background: rgb(211, 208, 52);
+}
+.todo-item{
+    padding: 0rem 0.5rem;
+}
+
+.fa-trash, .fa-check, .fa-edit {
+    pointer-events: none;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: var(--p1Col);
+}
+.fall{
+    transform: translateY(8rem) rotatez(20deg);
+    opacity: 0;
+}
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+select {
+    color: var(--light);
+    background-color: var(--medium);
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: large;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+/*
+.select:hover::after{
+    background: white;
+    color: #ff3f47;
+}*/
+
+.edit-input{
+    font-family: 'Poppins', sans-serif;
+    font-size: larger;
+    color: cadetblue;
+}

@@ -7,7 +7,7 @@
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
   --transparent: rgba(87, 112, 112,0.5);
   --p1Col: rgb(27, 143, 33);
-  --p2Col: 217, 44, 60;
+  --p2Col: rgb(217, 44, 60);
 }
 * {
   color: var(--primary);
@@ -15,10 +15,11 @@
 
 h1 {
   text-decoration: underline;
+  text-align: center;
 }
 
 .linkBtn {
-  height: auto;
+  height: 70px;
 }
 
 html {
