@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,4 +48,55 @@
     </section>
     <script src="./todolist.js"></script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="../../../styles.css">
+    <link rel="stylesheet" href="./todolist.css">
+    <title>Todo List</title>
+</head>
+<body>
+    <section class="navSection">
+        <div>
+            <button id="homebtn" class="navBtn" onclick="window.location.href = '../../../index.html'">Home</button>
+            <button class="navBtn selectedBtn" onclick="window.location.href = '../../projects.html'">Projects</button>
+        </div>
+        <div>
+            <button class="nav2btn" onclick="window.location.href = '../clocks/clocks.html'">Clocks</button>
+            <button class="nav2btn" onclick="window.location.href = '../weather/weather.html'">Weather</button>
+            <button class="nav2btn selectedBtn" onclick="window.location.href = './todolist.html'">To Do List</button>
+            <button class="nav2btn" onclick="window.location.href = '../../games/tictactoe/tictactoe.html'">Tic Tac Toe</button>
+            <button class="nav2btn" onclick="window.location.href = '../../games/connect4/connect4.html'">Connect Four</button>
+            <button class="nav2btn" onclick="window.location.href = '../../games/reversi/reversi.html'">Reversi</button>
+        </div>
+    </section>
+    <section>
+        <header>
+            <h1>To Do List</h1>
+        </header>
+        <form>
+            <input type="text" class="todo-input">
+            <button class="todo-button" type="submit">
+                <i class="fas fa-plus-square"></i>
+            </button>
+            <div class="select">
+                <select name="todos" class="filter-todo">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </select>
+            </div>
+        </form>
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
+        </div>
+    </section>
+    <script src="./todolist.js"></script>
+</body>
+>>>>>>> 60d103c... Updated a lot...
 </html>

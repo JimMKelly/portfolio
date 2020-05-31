@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 	<head>
@@ -45,4 +46,53 @@
 		</div>
 		<!--<script type="text/javascript" src="../../formatting.js"></script>-->
 	</body>
+=======
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Connect Four</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="it=edge" />
+        <link rel="stylesheet" type="text/css" href="../../../styles.css">
+		<script type="text/javascript" src="connect4.js"></script>
+	</head>
+
+	<body onload="updateBoard()">
+		<section id="navbar" class="gamesbtns">
+			<div>
+				<button id="homebtn" class="navBtn" onclick="window.location.href = '../../../index.html'">Home</button>
+				<button class="navBtn selectedBtn" onclick="window.location.href = '../../projects.html'">Projects</button>
+			</div>
+            <div>
+				<button class="nav2btn" onclick="window.location.href = '../../misc/clocks/clocks.html'">Clocks</button>
+				<button class="nav2btn" onclick="window.location.href = '../../misc/weather/weather.html'">Weather</button>
+				<button class="nav2btn" onclick="window.location.href = '../../misc/todolist/todolist.html'">To Do List</button>
+				<button class="nav2btn" onclick="window.location.href = '../tictactoe/tictactoe.html'">Tic Tac Toe</button>
+                <button class="nav2btn selectedBtn" onclick="window.location.href = '../connect4/connect4.html'">Connect Four</button>
+                <button class="nav2btn" onclick="window.location.href = '../reversi/reversi.html'">Reversi</button>
+            </div>
+        </section>
+		<div id="outerdiv">
+			<div class="column1">
+				<fieldset id="scores">
+					<legend>Scores</legend>
+					<p id="p1Score" class="scoreboard"></p> 
+					<p id="p2Score" class="scoreboard"></p>
+					<button class="projBtn" onclick="resetScores()" id="resetBtn" >Reset scores</button>
+				</fieldset>
+			</div>
+			<div id="overText" class="column2">
+				Player 1, click to start.
+			</div>
+			<div class="column3">
+				<!--<button id="showPlayer" class="projBtn" onclick="showPlayerNum()">Show player number</button>-->
+			</div>
+		</div>
+		<div>
+			<button onclick="replay()" class="projBtn" id="startBtn" style="display: none"></button>
+			<canvas id="myCanvas">blah</canvas>
+		</div>
+		<!--<script type="text/javascript" src="../../formatting.js"></script>-->
+	</body>
+>>>>>>> 60d103c... Updated a lot...
 </html>

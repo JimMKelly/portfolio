@@ -4,7 +4,9 @@
 		<meta charset="UTF-8">
 		<title>Portfolio - James</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="it=edge" />
 		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="stylesheet" type="text/css" href="slideshow.css">
 	</head>
 
 	<body>
@@ -14,24 +16,89 @@
 				<button class="navBtn" onclick="window.location.href = 'projects/projects.html'">Projects</button>
 				<button class="navBtn" onclick="window.location.href = 'resume.html'">Resume</button>
 				<button class="navBtn" onclick="window.location.href = 'about.html'">About</button>
-				<button class="navBtn" onclick="window.location.href = 'contact.html'">Contact</button>
 			</section>
 			<section class="container">
-				<img id="profilePic" class="top-center" src= "images/1dog.jpg" alt="photo">
+				<img id="profilePic" class="top-center" src= "images/profile1.jpg" alt="photo">
 				<div class="contdiv">
 					<div class="centered">
 						<p><br/>James Kelly <br/>Web and Game Developer</p>
 					</div>	
 				</div>
 			</section>
-			<section  class="container">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat sit amet risus id vestibulum. Duis at viverra felis. Cras molestie in lacus at pulvinar. Sed posuere nisi eget massa fermentum porta. Donec fringilla vestibulum euismod. Integer consequat tincidunt elit. Nulla hendrerit, tortor id vehicula lacinia, ante ipsum mattis ipsum, vitae sollicitudin nunc arcu in libero. Morbi tristique viverra felis eget consectetur. Donec vitae lacus est. Maecenas suscipit nibh vel tortor sagittis euismod. Cras nisi nulla, euismod id sapien sed, sodales vestibulum dolor. Duis nec ipsum euismod, laoreet nisl faucibus, mattis nulla. Etiam facilisis ac libero in malesuada. Vivamus non laoreet massa, in efficitur quam. Praesent augue risus, aliquet ac metus eleifend, faucibus varius purus. Morbi sed imperdiet sapien.</p>
-				<p>Suspendisse ut tempor dui. In scelerisque velit ipsum, eleifend dignissim nunc varius quis. Morbi dapibus nisi eget libero tincidunt tempus. Etiam semper, massa sed auctor hendrerit, mi nunc lobortis sem, eleifend blandit velit lacus sed neque. Suspendisse potenti. Aliquam eu tellus sed ligula facilisis bibendum quis sed sapien. Cras id tristique tellus, nec pharetra orci. Ut non tellus tristique, blandit neque eu, fermentum dui. Nullam viverra quis neque at maximus. Fusce sem leo, vulputate nec mollis ac, vehicula ut ligula.</p>
-				<p>Nam imperdiet, lacus eget euismod laoreet, quam erat consequat lorem, ut ullamcorper risus augue a enim. Aenean dignissim gravida lorem, eget commodo ligula mollis mattis. Aenean ac porta nulla. Nam imperdiet, ligula a venenatis vehicula, mauris lacus elementum nunc, eu consectetur justo augue sit amet velit. Proin imperdiet mauris a neque lobortis, vel elementum nunc euismod. Aenean sed turpis semper, condimentum elit quis, finibus lorem. Duis eu ante vel est ullamcorper rutrum. Donec a leo non augue mollis luctus non consequat diam. Phasellus dapibus diam eu tincidunt accumsan.</p>
-				<p>Nulla commodo luctus purus, eget imperdiet ligula rhoncus sed. Donec in ornare nunc. Ut ut ornare purus. Morbi at purus dapibus, porttitor quam eu, pulvinar dui. Aliquam diam tortor, pretium in massa at, commodo dictum quam. Etiam non rutrum nisl, eu consectetur lectus. Nunc metus enim, aliquam eu pulvinar id, venenatis et risus. Curabitur pharetra vulputate dui eu blandit.</p>
-				<p>Fusce faucibus nulla et finibus fringilla. Cras lacinia arcu in lorem viverra, ac pellentesque sapien ornare. Duis et finibus risus. Curabitur accumsan mauris eu velit suscipit sollicitudin. Nulla facilisi. Nulla facilisi. Nulla venenatis mattis neque, ac tempus orci sollicitudin sed. Maecenas tempus eget ligula ac pellentesque. Etiam viverra erat non ipsum aliquam, et auctor dolor facilisis. Vestibulum iaculis lectus urna, vel viverra nisl sagittis at. Morbi tempus pretium elementum. Vivamus odio diam, volutpat sed congue in, euismod eget lacus.</p>
+			<section  class="container links">
+				<button class = "navBtn linkBtn" onclick="window.open('https://www.linkedin.com/in/jamesmichaelkelly')" >
+					LinkedIn<br/><img height=30 src="images/linked in icon.png">
+				</button>
+				<button class = "navBtn linkBtn" onclick="window.open('https://github.com/JimMKelly')" >
+					Git Hub<br/><img height=30 src="images/github.png">
+				</button>
+				<button class = "navBtn linkBtn email" onclick="window.location.href = 'mailto:jim.m.kelly@gmail.com?'">Email<br/>&#9993;<br/></button>
+			</section>
+			<section>
+				<!-- Slideshow container -->
+				<div class="slideshow-container">
+					<h1>Projects</h1>
+					<!-- Full-width images with number and caption text -->
+					<div class="mySlides fade">
+					<div class="numbertext">1 / 6</div>
+					<button class="nav2btn imgBtn ssBtn" onclick="window.location.href = './projects/misc/clocks/clocks.html'">
+						Clocks<br/><img class="slideshowimgs" src= "./images/ss_clocks.PNG" alt="clocks photo">
+					</button>
+					</div>
+				
+					<div class="mySlides fade">
+					<div class="numbertext">2 / 6</div>
+					<button class="nav2btn imgBtn ssBtn" onclick="window.location.href = './projects/misc/weather/weather.html'">
+						Weather API<br/><img class="slideshowimgs" src= "./images/ss_weather.PNG" alt="weather photo">
+					</button>
+					</div>
+				
+					<div class="mySlides fade">
+					<div class="numbertext">3 / 6</div>
+					<button class="nav2btn imgBtn ssBtn" onclick="window.location.href = './projects/misc/todolist/todolist.html'">
+						To Do List<br/><img class="slideshowimgs" src= "./images/ss_todolist.PNG" alt="to do list">
+					</button>
+					</div>
+				
+					<div class="mySlides fade">
+					<div class="numbertext">4 / 6</div>
+					<button class="nav2btn imgBtn ssBtn" onclick="window.location.href = './projects/games/tictactoe/tictactoe.html'">
+						Tic Tac Toe<br/><img class="slideshowimgs" src= "./images/ss_tictactoe.PNG" alt="tictactoe">
+					</button>
+					</div>
+				
+					<div class="mySlides fade">
+					<div class="numbertext">5 / 6</div>
+					<button class="nav2btn imgBtn ssBtn" onclick="window.location.href = './projects/games/connect4/connect4.html'">
+						Connect Four<br/><img class="slideshowimgs" src= "./images/ss_connectfour.PNG" alt="connect4">
+					</button>
+					</div>
+				
+					<div class="mySlides fade">
+					<div class="numbertext">6 / 6</div>
+					<button class="nav2btn imgBtn ssBtn" onclick="window.location.href = './projects/games/revesi/revesi.html'">
+						Reversi<br/><img class="slideshowimgs" src= "./images/ss_reversi.PNG" alt="reversi">
+					</button>
+					</div>
+				
+					<!-- Next and previous buttons -->
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				</div>
+				<br>
+				
+				<!-- The dots/circles -->
+				<div style="text-align:center">
+					<span class="dot" onclick="currentSlide(1)"></span>
+					<span class="dot" onclick="currentSlide(2)"></span>
+					<span class="dot" onclick="currentSlide(3)"></span>
+					<span class="dot" onclick="currentSlide(4)"></span>
+					<span class="dot" onclick="currentSlide(5)"></span>
+					<span class="dot" onclick="currentSlide(6)"></span>
+				</div>
 			</section>
 		</div>
+		
 		<script type="text/javascript" src="formatting.js"></script>
 	</body>
 </html>
