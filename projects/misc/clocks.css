@@ -10,7 +10,7 @@
 }
 
 .textName, .textClass {
-  stroke-width: 1;
+  stroke-width: 0;
   stroke: rgb(247, 247, 242);
   fill: rgb(247, 247, 242);
   font-family: "Times New Roman";
@@ -18,5 +18,14 @@
 }
 
 .textClass {
-  font-size: 1.5em;
+  font-size: 1.2em;
+}
+
+/*###Clocks###*/
+select {
+  color: var(--light);
+  background-color: var(--medium);
+}
+.clockSection {
+  display: flex;
 }
