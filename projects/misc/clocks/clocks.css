@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .fieldsetClass {
   margin: auto;
   display: inline-flex;
@@ -29,36 +28,4 @@ select {
 }
 .clockSection {
   display: flex;
-=======
-.fieldsetClass {
-  margin: auto;
-  display: inline-flex;
-  height: auto;
-  background-color: rgba(87, 112, 112,0.2);
-}
-
-.svgClass {
-    stroke-width: 2;
-}
-
-.textName, .textClass {
-  stroke-width: 0;
-  stroke: rgb(247, 247, 242);
-  fill: rgb(247, 247, 242);
-  font-family: "Times New Roman";
-  font-size: 2em;
-}
-
-.textClass {
-  font-size: 1.2em;
-}
-
-/*###Clocks###*/
-select {
-  color: var(--light);
-  background-color: var(--medium);
-}
-.clockSection {
-  display: flex;
->>>>>>> 60d103c... Updated a lot...
 }
