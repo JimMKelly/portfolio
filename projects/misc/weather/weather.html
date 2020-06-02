@@ -31,8 +31,11 @@
             </div>
             <div class="wrapper">
                 <fieldset id="btnsFS" class="selectBtns" style="display: none;">
-                    <select id="cities">
-                        <option value="none">Select a city</option>
+                    <select id="country" onchange="ChangeCountryList()"> 
+                        <option value="">-- Select a Country --</option>
+                    </select>     
+                    <select id="city" style="display: none;">
+                        <option value="none">-- Select a City --</option> 
                     </select>
                     <div>
                         <button class="projBtn" onclick="getWeather()">Get weather</button>

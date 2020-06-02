@@ -1,27 +1,28 @@
-var allCities = [
-    {   id: 3117735,
-        name: "Madrid"},
-    {   id: 2193733,
-        name: "Auckland"},
-    {   id: 2643743,
-        name: "London"},
-    {   id: 2147714,
-        name: "Sydney"},
-    {   id: 5128581,
-        name: "New York"},
-    {   id: 1850147,
-        name: "Tokyo"},
-    {   id: 524901,
-        name: "Moscow"},
-    {   id: 1816670,
-        name: "Beijing"},
-    {   id: 3128760,
-        name: "Barcelona"},
-    {   id: 2988507,
-        name: "Paris"},
-    {   id: 2950159,
-        name: "Berlin"}
-  ]
+var countriesAndCities = {};
+countriesAndCities['Australia'] = [
+    { id: 2147714, name: 'Sydney'},
+    { id: 2158177, name: 'Melbourne'}],
+countriesAndCities['Germany'] = [
+    { id: 2950159, name: 'Berlin'},
+    { id: 2925533, name: 'Frankfurt am Main'},
+    { id: 2867714, name: 'Muenchen'},  
+    { id: 2934246, name: 'Dusseldorf'},    
+    { id: 2935517, name: 'Dortmund'},    
+    { id: 2886242, name: 'Koeln'}],
+countriesAndCities['New Zealand'] = [
+    { id: 2193733, name: 'Auckland'},
+    { id: 2192362, name: 'Christchurch'},
+    { id: 2179537, name: 'Wellington'},
+    { id: 2190324, name: 'Hamilton'},
+    { id: 2208032, name: 'Tauranga'},
+    { id: 2191562, name: 'Dunedin'}],
+countriesAndCities['Spain'] = [
+    { id: 3117735, name: 'Madrid' }, 
+    { id: 3128760, name: 'Barcelona'},
+    { id: 2509954, name: 'Valencia'},
+    { id: 2510911, name: 'Sevilla'},
+    { id: 2514256, name: 'Malaga'},
+    { id: 2512989, name: 'Palma'}];
 
 var currentCity = { id: 0, name: "", tempDeg: 0,  tempDescrip: "",  icon: "", tempMax: 0, tempMin: 0 }; 
 var citiesUsed = [];
@@ -47,17 +48,20 @@ function getCityData(){
     //GET DATA FOR ALL CITIES FROM API
     const apiKey = `f9c8276aa2d5f5595499589d39c2611a`;
     var cityIds = "";
-    for(let i=0; i< allCities.length; i++){
-        cityIds = cityIds + allCities[i].id + ",";
+
+    for (var country in countriesAndCities) {
+        //Sort cities alphabetially
+        var obj = countriesAndCities[country];
+        for (var prop in obj) {
+            cityIds = cityIds + obj[prop].id + ",";
+        }
     }
+    
     cityIds = cityIds.substring(0, cityIds.length - 1);
     /*### USE PROXY FOR WORKING IN LOCAL DIRECTORY### */
     const proxy = 'https://cors-anywhere.herokuapp.com/';
     const api = `${proxy}http://api.openweathermap.org/data/2.5/group?id=${cityIds}&units=metric&appid=${apiKey}&units=metric`
     
-    //###USE ON LIVE SERVER###
-   //const api = `http://api.openweathermap.org/data/2.5/group?id=${cityIds}&units=metric&appid=${apiKey}&units=metric`
-
     fetch(api)
     .then(response =>{
         return response.json();
@@ -65,7 +69,6 @@ function getCityData(){
     .then(data => {
         console.log(data);
         let currentCity = {};
-        //data.forEach(myFunction);
         let l = data.list.length;
         for (let i = 0; i < l; ++i) {
             currentCity = {};
@@ -82,7 +85,7 @@ function getCityData(){
         }
     })
     .then(function() {
-        document.getElementById("btnsFS").style.display="block";
+        document.getElementById("btnsFS").style.display="inline-flex";
         document.getElementById("loader").style.display="none";
     })
     .catch((error) => {
@@ -232,26 +235,29 @@ function removeCities() {
 }
 
 function loadCities() {
-    let l = allCities.length;
-    //Sort cities alphabetially
-    allCities.sort(function(a, b) {
-      if(a.name < b.name) { return -1 }
-      if(a.name > b.name) { return 1 }
-      return 0;
-    });
-  
-    for (let i = 0; i < l; ++i) {
-      listItem = document.createElement('option'); // create an item for each one
-      listItem.innerHTML = allCities[i].name; // Add the item text
-      document.getElementById("cities").appendChild(listItem); // Add listItem to the listElement
+    for (var country in countriesAndCities) {
+        //Sort cities alphabetially
+        var obj = countriesAndCities[country];
+        for (var prop in obj) {
+            obj.sort(function(a, b) {
+                if(a.name < b.name) { return -1 }
+                if(a.name > b.name) { return 1 }
+                return 0;
+            });
+        }
+    
+        //Load countries to list
+        listItem = document.createElement('option'); // create an item for each one
+        listItem.innerHTML = country; // Add the item text
+        listItem.value = country;
+        document.getElementById("country").appendChild(listItem);
     }
   }
 
 function getCityName() {
     //Get data for new clock
-    var e = document.getElementById("cities");
+    var e = document.getElementById("city");
     var name = e.options[e.selectedIndex].value;
-    let l = allCities.length;
     
     currentCityName = name;
     var cityUsed = false;
@@ -263,5 +269,29 @@ function getCityName() {
     if((!cityUsed) && (name != "none")) { //Check city is viable
       citiesUsed.push(currentCityName);
       return currentCityName;
+    }
+}
+
+function ChangeCountryList() {
+    var countryList = document.getElementById("country");
+    var cityList = document.getElementById("city");
+    var selCountry = countryList.options[countryList.selectedIndex].value;
+
+    while (cityList.options.length) {
+      cityList.remove(0);
+    }
+    var cities = countriesAndCities[selCountry];
+    if (cities) {
+      var i;
+      document.getElementById("city").style.display="block";
+      var listItem = document.createElement('option');
+      listItem.innerHTML = "-- Select a City --";
+      document.getElementById("city").appendChild(listItem);
+      for (i = 0; i < cities.length; i++) {
+        var city = new Option(cities[i].name, i);
+        var opt = document.createElement('option');
+        city.value = cities[i].name;
+        cityList.options.add(city);
+      }
     }
 }
