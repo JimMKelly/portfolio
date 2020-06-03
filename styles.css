@@ -107,9 +107,10 @@ body {
 }
 
 .links {
-  display: inline;
+  /*display: inline;*/
   text-align: center;
   z-index: 1;
+  /*margin-top: 7%;*/
 }
 
 /*####Buttons#####*/
@@ -167,7 +168,7 @@ body {
   color: var(--dark);
 }
 .email {
-  padding-bottom: 0.72rem;
+  vertical-align: top;
 }
 
 .selectedBtn {
@@ -264,6 +265,9 @@ fieldset {
     padding: 0.5rem 0.5rem;
     font-size: 15px;
   }
+  /*.email {
+    padding-top: 0.72rem;
+  }*/
   .imgBtn {
     font-size: 14;
   }
@@ -344,3 +348,9 @@ fieldset {
     margin-top: 10%;
   }
 }
+/*
+@media(max-height: 900px) {
+  .links {
+    padding-top: 7%;
+  }
+}*/
