@@ -130,6 +130,14 @@ function addCity(city){
     fs.setAttribute("class", "fieldsetClass");
     fs.setAttribute("id", idName);
 
+    var removeBtn = document.createElement("button");
+    removeBtn.setAttribute("class","projBtn");
+    removeBtn.setAttribute("onclick","removeOne(" + idName + ")");
+    removeBtn.style.marginLeft = "70%";
+    removeBtn.style.fontSize = "12px";
+    removeBtn.innerText = "Remove";
+    fs.appendChild(removeBtn);
+
     var div1 = document.createElement("div");
     div1.setAttribute("class", "location");
     fs.appendChild(div1);
@@ -294,4 +302,14 @@ function ChangeCountryList() {
         cityList.options.add(city);
       }
     }
+}
+
+function removeOne(idName){
+    var elID = idName.id;
+    var el = document.getElementById(elID);
+    var cityName = elID.substring(0, elID.length - 2);
+    var index = citiesUsed.indexOf(cityName);
+    if (index !== -1) citiesUsed.splice(index, 1);
+
+    el.remove();
 }
