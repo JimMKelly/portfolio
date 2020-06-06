@@ -4,7 +4,6 @@ var currentCity = "";
 var d = new Date();
 var n = d.getTimezoneOffset();
 var b = d.getUTCHours();
-//console.log(n, b);
 
 var allCities = [
   { name: "Madrid"  ,
@@ -25,40 +24,19 @@ var allCities = [
     timeDiff: 8     }
 ]
 
-function resetAll() {
-  removeClocks();
-  numClocks = 0;
-  citiesUsed = [];
-  currentCity = "";
-  document.getElementById("resetBtn").style.display = "none";
-}
-
-function loadCities() {
-  let l = allCities.length;
-  //Sort cities alphabetially
-  allCities.sort(function(a, b) {
-    if(a.name < b.name) { return -1 }
-    if(a.name > b.name) { return 1 }
-    return 0;
-  });
-
-  for (let i = 0; i < l; ++i) {
-    listItem = document.createElement('option'); // create an item for each one
-    listItem.innerHTML = allCities[i].name; // Add the item text
-    document.getElementById("cities").appendChild(listItem); // Add listItem to the listElement
-  }
-}
-
 function newClock() {
-  removeClocks();
-  getData();
+  //Check is valid city
+  if(getData()) {
+    let last = citiesUsed[citiesUsed.length - 1];
+    createClock(last);
+    updateClock(last);
+  }
+
   numClocks = citiesUsed.length;
   if(numClocks > 0 ) {
     document.getElementById("resetBtn").style.display = "block";
   }
-  for (let i = 0; i < numClocks; i++) {
-    createClock(citiesUsed[i].name, citiesUsed[i].timeDiff, citiesUsed[i].arc, citiesUsed[i].hands, citiesUsed[i]._24hour);
-  }
+
   updateTime();
 }
 
@@ -91,84 +69,49 @@ function getData() {
       cityUsed = true;
     }
   }
-  if(!cityUsed && name != "none") { //Check city is viable
+
+  //Check city is viable
+  if(!cityUsed && name != "none") { 
     citiesUsed.push(city);
+    return true;
+  } else {
+    return false;
   }
+
 }
 
 function updateTime() { 
-  removeClocks();
-  numClocks = citiesUsed.length;
-  for (let i = 0; i < numClocks; i++) {
-    createClock(citiesUsed[i].name, citiesUsed[i].timeDiff, citiesUsed[i].arc, citiesUsed[i].hands, citiesUsed[i]._24hour);
-  }
-  
-  var t = setTimeout(updateTime, 1000);
+
+  citiesUsed.forEach(function(item){
+    var idName = item.name + "fs";
+    var el = document.getElementById(idName);
+    el.children[1].remove();
+    updateClock(item);
+
+    var t = setTimeout(updateTime, 1000);
+  });
+
 }
 
-function createClock(_name, _diff, _arc, _hands, _24hr) {
-  var timeDiff = _diff;
-  var name = _name;
-  var showArcs = _arc;
-  var showHands = _hands;
-  var showTime = true;
-  var _24hour = _24hr;
+function updateClock(item){
+  var timeDiff = item.timeDiff;
+  var name = item.name;
+  var showArcs = item.arc;
+  var showHands = item.hands;
+  var showTime = item.showTime;
+  var _24hour = item._24hour;
   var width = 275;
   var height = 300;
   var xPos = width / 2;
   var yPos = height / 2 + 20;
+  var idName = name + "fs";
   
-  //Create fieldset
-  var fieldSet1 = document.createElement("fieldset");
-  fieldSet1.setAttribute("class", "fieldsetClass");
-  
-  //Create buttons
-  var btnsNav = document.createElement("div");
-  btnsNav.setAttribute("class", "btnsDiv");
-  var handsArc = document.createElement("button");
-  handsArc.setAttribute("class", "projBtn");
-  handsArc.onclick = function() {
-    showArcs = !showArcs;
-    showHands = !showHands;
-    for(let i=0; i<citiesUsed.length; i++) {
-      if(citiesUsed[i].name == name) {
-        citiesUsed[i].arc = showArcs;
-        citiesUsed[i].hands = showHands;
-      }
-    }
-  };
-  var txt = showHands  ? "Show as Arcs" : "Show as Hands";
-  handsArc.innerHTML = txt;
-  btnsNav.appendChild(handsArc);
-
-  showTime = showArcs;
-
-  if(showTime){
-    var _24or12 = document.createElement("button");
-    _24or12.setAttribute("class", "projBtn");
-    _24or12.style.float = "right";
-    var _24txt = _24hour  ? "12 hr" : "24 hr";
-    _24or12.innerHTML = _24txt;
-    _24or12.onclick = function() {
-      _24hour = !_24hour;
-      for(let i=0; i<citiesUsed.length; i++) {
-        if(citiesUsed[i].name == name) {
-          citiesUsed[i]._24hour = _24hour;
-        }
-      }
-    };
-    btnsNav.appendChild(_24or12);
-  } 
- 
-  fieldSet1.appendChild(btnsNav);
-
   //Create SVG
   var svg1 = document.createElementNS("http://www.w3.org/2000/svg","svg");
   svg1.setAttribute("width", width);
   svg1.setAttribute("height", height);
   svg1.setAttribute("stroke-width", "2");
   svg1.setAttribute("class", "svgClass");
-  fieldSet1.appendChild(svg1);
 
   //Set time variables
   d = new Date();
@@ -314,7 +257,71 @@ function createClock(_name, _diff, _arc, _hands, _24hr) {
     svg1.appendChild(secondHand);
   }
   
-  //console.log("The time in " + name + " is " + hr2 + ":" + min2 + ":" + sec2 + " " + ampm);
+  document.getElementById(idName).appendChild(svg1);
+}
+
+function createClock(item) {
+  var name = item.name;
+  var showArcs = item.arc;
+  var showHands = item.hands;
+  var showTime = item.showTime;
+  var _24hour = item._24hour;
+    
+  //Create fieldset
+  var fieldSet1 = document.createElement("fieldset");
+  var idName = name + "fs";
+  fieldSet1.setAttribute("class", "fieldsetClass");
+  fieldSet1.setAttribute("id", idName);
+  
+  //Create buttons
+  var btnsNav = document.createElement("div");
+  btnsNav.setAttribute("class", "btnsDiv");
+  var handsArc = document.createElement("button");
+  handsArc.setAttribute("class", "projBtn");
+  handsArc.onclick = function() {
+    showArcs = !showArcs;
+    showHands = !showHands;
+    for(let i=0; i<citiesUsed.length; i++) {
+      if(citiesUsed[i].name == name) {
+        citiesUsed[i].arc = showArcs;
+        citiesUsed[i].hands = showHands;
+      }
+    }
+  };
+  var txt = showHands  ? "Show as Arcs" : "Show as Hands";
+  handsArc.innerHTML = txt;
+  btnsNav.appendChild(handsArc);
+
+  showTime = showArcs;
+
+  if(showTime){
+    var _24or12 = document.createElement("button");
+    _24or12.setAttribute("class", "projBtn");
+    _24or12.style.float = "right";
+    var _24txt = _24hour  ? "12 hr" : "24 hr";
+    _24or12.innerHTML = _24txt;
+    _24or12.onclick = function() {
+      _24hour = !_24hour;
+      for(let i=0; i<citiesUsed.length; i++) {
+        if(citiesUsed[i].name == name) {
+          citiesUsed[i]._24hour = _24hour;
+        }
+      }
+    };
+    btnsNav.appendChild(_24or12);
+  } 
+ 
+  //Remove Button
+  var removeBtn = document.createElement("button");
+  removeBtn.setAttribute("class","projBtn");
+  removeBtn.setAttribute("onclick","removeOne(" + idName + ")");
+  removeBtn.style.marginLeft = "70%";
+  removeBtn.style.fontSize = "12px";
+  removeBtn.innerText = "Remove";
+  btnsNav.appendChild(removeBtn);
+
+  fieldSet1.appendChild(btnsNav);
+  
   document.getElementById("clocksDiv").appendChild(fieldSet1);
 }
 
@@ -348,4 +355,44 @@ function describeArc(x, y, radius, spread, startAngle, endAngle){
 
 function leadingZero(n){
   return n > 9 ? "" + n: "0" + n;
+}
+
+function removeOne(idName){
+  var elID = idName.id;
+  var el = document.getElementById(elID);
+  var cityName = elID.substring(0, elID.length - 2);
+  
+  for(let i = 0; i < citiesUsed.length; i++){
+    if(citiesUsed[i].name == cityName){
+      citiesUsed.splice(i,1);
+      break;
+    }
+  }
+
+  numClocks--;
+  el.remove();
+}
+
+function resetAll() {
+  removeClocks();
+  numClocks = 0;
+  citiesUsed = [];
+  currentCity = "";
+  document.getElementById("resetBtn").style.display = "none";
+}
+
+function loadCities() {
+  let l = allCities.length;
+  //Sort cities alphabetially
+  allCities.sort(function(a, b) {
+    if(a.name < b.name) { return -1 }
+    if(a.name > b.name) { return 1 }
+    return 0;
+  });
+
+  for (let i = 0; i < l; ++i) {
+    listItem = document.createElement('option'); // create an item for each one
+    listItem.innerHTML = allCities[i].name; // Add the item text
+    document.getElementById("cities").appendChild(listItem); // Add listItem to the listElement
+  }
 }
