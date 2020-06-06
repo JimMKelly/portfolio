@@ -8,14 +8,16 @@ var b = d.getUTCHours();
 var allCities = [
   { name: "Madrid"  ,
     timeDiff: 2     },
+  { name: "Athens"  ,
+    timeDiff: 3     },
   { name: "Auckland",
     timeDiff: 12    },
   { name: "London"  ,
     timeDiff: 1    },
   { name: "Sydney"  ,
     timeDiff: 10     },
-  { name: "New York",
-    timeDiff: -4    },
+  { name: "California",
+    timeDiff: -7    },
   { name: "Tokyo"   ,
     timeDiff: 9     },
   { name: "Moscow"  ,
@@ -30,11 +32,6 @@ function newClock() {
     let last = citiesUsed[citiesUsed.length - 1];
     createClock(last);
     updateClock(last);
-  }
-
-  numClocks = citiesUsed.length;
-  if(numClocks > 0 ) {
-    document.getElementById("resetBtn").style.display = "block";
   }
 
   updateTime();
@@ -87,6 +84,13 @@ function updateTime() {
     var el = document.getElementById(idName);
     el.children[1].remove();
     updateClock(item);
+  
+    numClocks = citiesUsed.length;
+    if(numClocks > 1 ) {
+      document.getElementById("resetBtn").style.display = "block";
+    } else {
+      document.getElementById("resetBtn").style.display = "none";
+    }
 
     var t = setTimeout(updateTime, 1000);
   });
@@ -359,6 +363,7 @@ function leadingZero(n){
 
 function removeOne(idName){
   var elID = idName.id;
+  console.log(idName);
   var el = document.getElementById(elID);
   var cityName = elID.substring(0, elID.length - 2);
   
