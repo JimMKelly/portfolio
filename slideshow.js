@@ -1,4 +1,6 @@
+//#######SLIDESHOW############
 var slideIndex = 1;
+var playSlide;
 showSlides(slideIndex);
 
 // Next/previous controls
@@ -12,6 +14,7 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+  clearTimeout(playSlide);
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
@@ -25,4 +28,9 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
+
+  playSlide = setTimeout(function() {
+    slideIndex++;
+    showSlides(slideIndex);
+  },4000)
 }
