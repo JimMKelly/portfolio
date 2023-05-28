@@ -58,7 +58,7 @@ function getCityData(){
     }
     
     cityIds = cityIds.substring(0, cityIds.length - 1);
-    const api = `http://api.openweathermap.org/data/2.5/group?id=${cityIds}&appid=${apiKey}&units=metric`;
+    const api = `https://api.openweathermap.org/data/2.5/group?id=${cityIds}&appid=${apiKey}&units=metric`;
     
     fetch(api)
     .then(response =>{
