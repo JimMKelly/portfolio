@@ -46,7 +46,7 @@ function getWeather(){
 function getCityData(){
 
     //GET DATA FOR ALL CITIES FROM API
-    const apiKey = `f9c8276aa2d5f5595499589d39c2611a`;
+    const apiKey = `0c657c2917f8e93ef2c66198aedd498d`;
     var cityIds = "";
 
     for (var country in countriesAndCities) {
@@ -58,9 +58,7 @@ function getCityData(){
     }
     
     cityIds = cityIds.substring(0, cityIds.length - 1);
-    /*### USE PROXY FOR WORKING IN LOCAL DIRECTORY### */
-    const proxy = 'https://cors-anywhere.herokuapp.com/';
-    const api = `${proxy}http://api.openweathermap.org/data/2.5/group?id=${cityIds}&units=metric&appid=${apiKey}&units=metric`
+    const api = `http://api.openweathermap.org/data/2.5/group?id=${cityIds}&appid=${apiKey}&units=metric`;
     
     fetch(api)
     .then(response =>{
