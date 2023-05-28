@@ -43,7 +43,7 @@ select {
   
 .fieldsetClass {
     margin: auto;
-    display: inline-flex;
+    display: inline-grid;
     height: auto;
     background-color: rgba(87, 112, 112,0.2);
   }
