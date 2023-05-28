@@ -46,7 +46,7 @@ function getWeather(){
 function getCityData(){
 
     //GET DATA FOR ALL CITIES FROM API
-    const apiKey = `0c657c2917f8e93ef2c66198aedd498d`;
+    const apiKey = config.weatherAPIKey;
     var cityIds = "";
 
     for (var country in countriesAndCities) {
