@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Arbitrage Betting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="it=edge" />
+    <link rel="stylesheet" type="text/css" href="../../../styles.css">
+    <link rel="stylesheet" type="text/css" href="odds.css">
+    <script src="odds.js" defer></script>
+</head>
+<body onload="loadLeagues()">
+    <section class="navSection">
+        <div>
+            <button id="homebtn" class="navBtn" onclick="window.location.href = '../../../index.html'">Home</button>
+            <button class="navBtn selectedBtn" onclick="window.location.href = '../../projects.html'">Projects</button>
+        </div>
+        <div>
+            <button class="nav2btn" onclick="window.location.href = '../clocks/clocks.html'">Clocks</button>
+            <button class="nav2btn" onclick="window.location.href = '../weather/weather.html'">Weather</button>
+            <button class="nav2btn" onclick="window.location.href = '../todolist/todolist.html'">To Do List</button>
+            <button class="nav2btn selectedBtn" onclick="window.location.href = 'odds.html'">Odds</button>
+            <button class="nav2btn" onclick="window.location.href = '../../games/tictactoe/tictactoe.html'">Tic Tac Toe</button>
+            <button class="nav2btn" onclick="window.location.href = '../../games/connect4/connect4.html'">Connect Four</button>
+            <button class="nav2btn" onclick="window.location.href = '../../games/reversi/reversi.html'">Reversi</button>
+        </div>
+    </section>
+    <div id="title-box">
+        <h2>Arbitrage Betting</h2>
+    </div>
+    <div id="arbitrageBets"></div>
+    <div class="container">
+        <fieldset>
+            <legend>League</legend>
+            <button class="btn" onclick="selectLeague()">Select League</button>
+            <select id="leagueList">
+                <option value="none">-- Select league --</option>
+            </select>
+        </fieldset>
+        <div id="matches"></div>
+    </div>
+</body>
+
+</html>
