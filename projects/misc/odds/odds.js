@@ -93,10 +93,10 @@ function checkForArbitrage(game) {
     const homeBetInfo = findBestOdds(game, 0);
     const bestHomeOdds = homeBetInfo.bestOdds;
     const homeBettingCo = homeBetInfo.bettingCompany;
-    const drawBetInfo = findBestOdds(game, 1);
+    const drawBetInfo = findBestOdds(game, 2);
     const bestDrawOdds = drawBetInfo.bestOdds;
     const drawBettingCo = drawBetInfo.bettingCompany;
-    const awayBetInfo = findBestOdds(game, 2);
+    const awayBetInfo = findBestOdds(game, 1);
     const bestAwayOdds = awayBetInfo.bestOdds;
     const awayBettingCo = awayBetInfo.bettingCompany;
     const homeTeam = game.homeTeam;
@@ -158,8 +158,8 @@ function createTable() {
         allGameData.forEach((game, index) => {
             checkForArbitrage(game);
             const bestHomeOdds = findBestOdds(game, 0).bestOdds;
-            const bestDrawOdds = findBestOdds(game, 1).bestOdds;
-            const bestAwayOdds = findBestOdds(game, 2).bestOdds;
+            const bestDrawOdds = findBestOdds(game, 2).bestOdds;
+            const bestAwayOdds = findBestOdds(game, 1).bestOdds;
 
             let tr = document.createElement('tr');
                 let td1 = document.createElement('td');
@@ -187,8 +187,8 @@ function createTable() {
 
                 game.allOdds.forEach((site) => {
                     const homeOdds = site.odds[0];
-                    const drawOdds = site.odds[1];
-                    const awayOdds = site.odds[2];
+                    const drawOdds = site.odds[2];
+                    const awayOdds = site.odds[1];
 
                     var tr_ = document.createElement('tr');
                         let td_1 = document.createElement('td');
